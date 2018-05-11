@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="appstore_page_change_bar_bottom_height">1dp</dimen>
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
+
+	<dimen name="appUpdate_num_height">12dp</dimen>
+
+	<dimen name="msg_num_bg_height">17dp</dimen>
+</resources>

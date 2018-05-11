@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+
+apply plugin: 'maven'
+apply plugin: 'signing'
+
+def versionAppName = "1.0.0"
+
+build.finalizedBy (uploadArchives)
+
+signing {
+    required { gradle.taskGraph.hasTask("uploadArchives") }
+    sign configurations.archives
+}
+
+uploadArchives {
+    configuration = configurations.archives
+    repositories.mavenDeployer {
+        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment)
+        }
+        repository(url: rootProject.ext.releaseRepositoryUrl) {
+            authentication(userName: rootProject.ext.userName,password: rootProject.ext.password)
+        }
+        snapshotRepository(url: rootProject.ext.snapshotRepositoryUrl) {
+            authentication(userName: rootProject.ext.userName,password: rootProject.ext.password)
+        }
+
+        pom.project {
+            packaging 'aar'
+            groupId "com.yunnex.checkversionupdate.api"
+            artifactId "carteen"
+            version "${versionAppName}-SNAPSHOT"
+        }
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    lintOptions {
+        abortOnError false
+        disable 'MissingTranslation'
+    }
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile 'com.yunnex.common:VPayLib:5.8.12'
+}

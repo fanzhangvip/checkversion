@@ -1,0 +1,14 @@
+<resources>
+    <!--activity - 更新应用提示框-->
+    <dimen name="appUpdateDialog_width">300dp</dimen>
+    <dimen name="appUpdateDialog_height">400dp</dimen>
+    <dimen name="appUpdateDialog_top_marginTop">10dp</dimen>
+    <dimen name="appUpdateDialog_title_marginTop">8dp</dimen>
+    <dimen name="appUpdateDialog_msg_marginTop">19dp</dimen>
+    <dimen name="appUpdateDialog_msg_textSize">13sp</dimen>
+    <dimen name="appUpdateDialog_btn_marginTop">22dp</dimen>
+    <dimen name="appUpdateDialog_btn_textSize">13sp</dimen>
+    <dimen name="appUpdateDialog_btnCancel_layout_marginStart">29dp</dimen>
+    <dimen name="appUpdateDialog_btnCancel_layout_marginTop">50dp</dimen>
+
+</resources>

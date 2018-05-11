@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/appUpdateDialog_width"
+    android:layout_height="@dimen/appUpdateDialog_height">
+
+    <ImageView
+        android:id="@+id/appupdate_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/app_update_bg" />
+
+    <ImageView
+        android:id="@+id/appupdate_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/appUpdateDialog_top_marginTop"
+        android:src="@drawable/app_update_cat" />
+
+    <ImageView
+        android:id="@+id/appupdate_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appupdate_top"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/appUpdateDialog_title_marginTop"
+        android:src="@drawable/app_update_discover" />
+
+    <TextView
+        android:id="@+id/appupdate_msg"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/appupdate_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/appUpdateDialog_msg_marginTop"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="4dp"
+        android:text="检测到当前应用有新版本\n是否去更新"
+        android:textColor="#202020"
+        android:textSize="@dimen/appUpdateDialog_msg_textSize" />
+
+    <com.yunnex.checkversionupdate.DownloadProgressButton
+        android:id="@+id/appupdate_btn"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/appupdate_msg"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/appUpdateDialog_btn_marginTop"
+        android:textSize="13sp"
+        app:progress_btn_ball_style="STYLE_BALL_PULSE"
+        app:progress_btn_border_width="2dp"
+        app:progress_btn_radius="20dp" />
+
+    <Button
+        android:id="@+id/appupdate_cancel_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/appupdate_bg"
+        android:layout_alignTop="@+id/appupdate_bg"
+        android:layout_marginEnd="-12dp"
+        android:layout_marginTop="-12dp"
+        android:background="@drawable/app_update_cancel" />
+</RelativeLayout>
